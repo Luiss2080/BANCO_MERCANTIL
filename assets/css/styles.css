@@ -1,0 +1,923 @@
+/**
+ * Estilos principales para Banco Camba
+ */
+
+/* Definición de variables de colores */
+:root {
+  --primary-color: #056f1f;      /* Color primario (verde oscuro) */
+  --secondary-color: #004481;    /* Color secundario (azul oscuro) */
+  --light-color: #ffffff;        /* Color claro (blanco) */
+  --border-color: #e0e0e0;       /* Color para bordes (gris claro) */
+  --hover-color: #033d11;        /* Color para hover (verde más oscuro) */
+  --danger-color: #dc3545;       /* Color para errores (rojo) */
+  --success-color: #28a745;      /* Color para éxito (verde) */
+  --warning-color: #ffc107;      /* Color para advertencias (amarillo) */
+  --info-color: #17a2b8;         /* Color para información (azul claro) */
+}
+
+/* ---------- ESTILOS GENERALES ---------- */
+body {
+  font-family: 'Arial', sans-serif;  /* Fuente principal */
+  background-color: #f5f5f5;         /* Color de fondo de la página */
+  margin: 0;                         /* Elimina el margen predeterminado */
+  padding: 0;                        /* Elimina el padding predeterminado */
+  min-height: 100vh;                 /* Altura mínima de la página */
+}
+
+/* Estilos para enlaces */
+a {
+  color: var(--secondary-color);     /* Color de los enlaces */
+  text-decoration: none;             /* Elimina el subrayado predeterminado */
+}
+
+a:hover {
+  text-decoration: underline;        /* Subrayado al pasar el mouse */
+}
+
+/* Contenedor principal */
+.container {
+  width: 100%;                      /* Ancho completo */
+  max-width: 1200px;                /* Ancho máximo */
+  margin: 0 auto;                   /* Centrado horizontal */
+  padding: 0 15px;                  /* Padding lateral */
+}
+
+/* ---------- CABECERA ---------- */
+.header {
+  background-color: var(--primary-color);  /* Color de fondo de la cabecera */
+  color: var(--light-color);               /* Color del texto */
+  padding: 15px 20px;                      /* Padding interno */
+  display: flex;                           /* Flexbox para alinear elementos */
+  justify-content: space-between;          /* Espacio entre elementos */
+  align-items: center;                     /* Centrado vertical */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);  /* Sombra suave */
+  
+}
+
+
+/* Contenedor del logo y la imagen */
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Imagen del logo */
+.logo-image {
+  height: 50px; /* Ajusta la altura de la imagen */
+  margin-right: 10px; /* Espaciado entre la imagen y el texto */
+}
+
+
+/* Estilos para el logo */
+.logo {
+  font-size: 24px;                        /* Tamaño de fuente */
+  font-weight: bold;                      /* Texto en negrita */
+}
+
+/* Contenedor de información del usuario */
+.user-info {
+  display: flex;                          /* Flexbox para alinear elementos */
+  align-items: center;                    /* Centrado vertical */
+}
+
+/* Nombre del usuario */
+.user-name {
+  margin-right: 15px;                     /* Margen derecho */
+}
+
+/* ---------- SELECTOR DE IDIOMA ---------- */
+.language-selector {
+  display: flex;                          /* Flexbox para alinear elementos */
+  align-items: center;                    /* Centrado vertical */
+  margin-right: 20px;                     /* Margen derecho */
+}
+
+.language-selector select {
+  padding: 5px 10px;                      /* Padding interno */
+  border-radius: 4px;                     /* Bordes redondeados */
+  border: 1px solid #ccc;                 /* Borde del selector */
+  background-color: white;                /* Color de fondo */
+  cursor: pointer;                        /* Cursor tipo puntero */
+}
+
+.language-selector label {
+  margin-right: 5px;                      /* Margen derecho */
+  font-weight: bold;                      /* Texto en negrita */
+}
+
+
+
+
+
+
+/* ---------- MENÚ LATERAL ---------- */
+.main-container {
+  display: flex;                          /* Flexbox para alinear elementos */
+  min-height: calc(100vh - 60px);         /* Altura mínima del contenedor */
+}
+
+.sidebar {
+  width: 250px;                           /* Ancho del menú lateral */
+  background-color: var(--light-color);    /* Color de fondo */
+  border-right: 1px solid var(--border-color); /* Borde derecho */
+  padding: 20px 0;                        /* Padding interno */
+}
+
+.sidebar-menu {
+  list-style: none;                       /* Elimina los estilos de lista */
+  padding: 0;                             /* Elimina el padding predeterminado */
+  margin: 0;                              /* Elimina el margen predeterminado */
+}
+
+.sidebar-menu-item {
+  padding: 12px 20px;                     /* Padding interno */
+  cursor: pointer;                        /* Cursor tipo puntero */
+  transition: background-color 0.3s;      /* Transición suave */
+}
+
+.sidebar-menu-item:hover {
+  background-color: #f0f0f0;              /* Color de fondo al pasar el mouse */
+}
+
+.sidebar-menu-item.active {
+  background-color: #e3f2fd;              /* Color de fondo para el ítem activo */
+  border-left: 4px solid var(--primary-color); /* Borde izquierdo */
+}
+
+
+
+
+
+
+
+/* ---------- CONTENIDO PRINCIPAL ---------- */
+.content {
+  flex: 1;                     /* Ocupa el espacio restante */
+  padding: 20px;               /* Padding interno */
+  overflow-y: auto;            /* Scroll vertical si es necesario */
+}
+
+/* ---------- TARJETAS ---------- */
+.card {
+  background-color: var(--light-color);  /* Color de fondo */
+  border-radius: 8px;                   /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Sombra suave */
+  padding: 20px;                       /* Padding interno */
+  margin-bottom: 20px;                 /* Margen inferior */
+}
+
+/* Encabezado de la tarjeta */
+.card-header {
+  font-size: 18px;                     /* Tamaño de fuente */
+  font-weight: bold;                   /* Texto en negrita */
+  margin-bottom: 15px;                 /* Margen inferior */
+  color: var(--primary-color);         /* Color del texto */
+  border-bottom: 1px solid var(--border-color); /* Borde inferior */
+  padding-bottom: 10px;                /* Padding inferior */
+}
+
+/* ---------- DASHBOARD ---------- */
+.dashboard {
+  display: grid;                       /* Usa CSS Grid para el layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+  gap: 20px;                           /* Espacio entre elementos */
+  margin-bottom: 30px;                 /* Margen inferior */
+}
+
+/* ---------- BOTONES ---------- */
+.btn {
+  display: inline-block;               /* Mostrar como bloque en línea */
+  font-weight: 400;                    /* Peso de la fuente */
+  text-align: center;                  /* Texto centrado */
+  white-space: nowrap;                 /* Evitar saltos de línea */
+  vertical-align: middle;              /* Alineación vertical */
+  user-select: none;                   /* Evitar selección de texto */
+  border: 1px solid transparent;       /* Borde transparente */
+  padding: 0.375rem 0.75rem;          /* Padding interno */
+  font-size: 1rem;                     /* Tamaño de fuente */
+  line-height: 1.5;                    /* Altura de línea */
+  border-radius: 0.25rem;              /* Bordes redondeados */
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transiciones suaves */
+  cursor: pointer;                     /* Cursor tipo puntero */
+}
+
+/* Botón primario */
+.btn-primary {
+  color: #fff;                         /* Color del texto */
+  background-color: var(--primary-color); /* Color de fondo */
+  border-color: var(--primary-color);  /* Color del borde */
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-color); /* Color de fondo al pasar el mouse */
+  border-color: var(--hover-color);    /* Color del borde al pasar el mouse */
+}
+
+/* Botón secundario */
+.btn-secondary {
+  color: #fff;                         /* Color del texto */
+  background-color: var(--secondary-color); /* Color de fondo */
+  border-color: var(--secondary-color); /* Color del borde */
+}
+
+.btn-secondary:hover {
+  background-color: #003366;           /* Color de fondo al pasar el mouse */
+  border-color: #002855;              /* Color del borde al pasar el mouse */
+}
+
+/* Botón de peligro */
+.btn-danger {
+  color: #fff;                         /* Color del texto */
+  background-color: var(--danger-color); /* Color de fondo */
+  border-color: var(--danger-color);   /* Color del borde */
+}
+
+.btn-danger:hover {
+  background-color: #c82333;           /* Color de fondo al pasar el mouse */
+  border-color: #bd2130;              /* Color del borde al pasar el mouse */
+}
+
+/* Botón de éxito */
+.btn-success {
+  color: #fff;                         /* Color del texto */
+  background-color: var(--success-color); /* Color de fondo */
+  border-color: var(--success-color);  /* Color del borde */
+}
+
+.btn-success:hover {
+  background-color: #218838;           /* Color de fondo al pasar el mouse */
+  border-color: #1e7e34;              /* Color del borde al pasar el mouse */
+}
+
+
+
+
+
+
+
+/* ---------- FORMULARIOS ---------- */
+.form-group {
+  margin-bottom: 15px; /* Margen inferior para separar grupos de formularios */
+}
+
+/* Etiquetas de los formularios */
+.form-label {
+  display: block;          /* Mostrar como bloque */
+  margin-bottom: 5px;      /* Margen inferior */
+  font-weight: bold;       /* Texto en negrita */
+}
+
+/* Campos de entrada de formularios */
+.form-control {
+  display: block;          /* Mostrar como bloque */
+  width: 100%;             /* Ancho completo */
+  padding: 0.375rem 0.75rem; /* Padding interno */
+  font-size: 1rem;         /* Tamaño de fuente */
+  line-height: 1.5;        /* Altura de línea */
+  color: #495057;          /* Color del texto */
+  background-color: #fff;  /* Color de fondo */
+  background-clip: padding-box; /* Recorte del fondo */
+  border: 1px solid #ced4da; /* Borde */
+  border-radius: 0.25rem;  /* Bordes redondeados */
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out; /* Transiciones suaves */
+}
+
+/* Estilos cuando el campo de formulario está enfocado */
+.form-control:focus {
+  color: #495057;          /* Color del texto */
+  background-color: #fff;  /* Color de fondo */
+  border-color: var(--primary-color); /* Color del borde */
+  outline: 0;              /* Eliminar el contorno predeterminado */
+  box-shadow: 0 0 0 0.2rem rgba(5, 111, 31, 0.25); /* Sombra al enfocar */
+}
+
+/* Estilos para campos de formulario inválidos */
+.form-control.is-invalid {
+  border-color: var(--danger-color); /* Color del borde para errores */
+}
+
+/* ---------- TABLAS ---------- */
+.table {
+  width: 100%;             /* Ancho completo */
+  border-collapse: collapse; /* Colapsar bordes de la tabla */
+  margin-bottom: 1rem;     /* Margen inferior */
+  background-color: transparent; /* Fondo transparente */
+}
+
+/* Celdas de la tabla */
+.table th,
+.table td {
+  padding: 0.75rem;        /* Padding interno */
+  vertical-align: top;     /* Alineación vertical superior */
+  border-top: 1px solid #dee2e6; /* Borde superior */
+}
+
+/* Encabezados de la tabla */
+.table thead th {
+  vertical-align: bottom;  /* Alineación vertical inferior */
+  border-bottom: 2px solid #dee2e6; /* Borde inferior más grueso */
+  background-color: #f2f2f2; /* Color de fondo */
+}
+
+/* Separación entre cuerpos de la tabla */
+.table tbody + tbody {
+  border-top: 2px solid #dee2e6; /* Borde superior entre cuerpos */
+}
+
+/* Filas alternas en tablas con estilo de rayas */
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Color de fondo para filas impares */
+}
+
+/* Efecto hover en filas de la tabla */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.075); /* Color de fondo al pasar el mouse */
+}
+
+/* ---------- ALERTAS ---------- */
+.alert {
+  position: relative;      /* Posición relativa */
+  padding: 0.75rem 1.25rem; /* Padding interno */
+  margin-bottom: 1rem;     /* Margen inferior */
+  border: 1px solid transparent; /* Borde transparente */
+  border-radius: 0.25rem;  /* Bordes redondeados */
+}
+
+/* Alerta de éxito */
+.alert-success {
+  color: #155724;          /* Color del texto */
+  background-color: #d4edda; /* Color de fondo */
+  border-color: #c3e6cb;  /* Color del borde */
+}
+
+/* Alerta de peligro */
+.alert-danger {
+  color: #721c24;          /* Color del texto */
+  background-color: #f8d7da; /* Color de fondo */
+  border-color: #f5c6cb;  /* Color del borde */
+}
+
+/* Alerta de advertencia */
+.alert-warning {
+  color: #856404;          /* Color del texto */
+  background-color: #fff3cd; /* Color de fondo */
+  border-color: #ffeeba;  /* Color del borde */
+}
+
+/* Alerta de información */
+.alert-info {
+  color: #0c5460;          /* Color del texto */
+  background-color: #d1ecf1; /* Color de fondo */
+  border-color: #bee5eb;  /* Color del borde */
+}
+
+
+
+
+
+
+/* ---------- PAGINACIÓN ---------- */
+.pagination {
+  display: flex;           /* Flexbox para alinear elementos */
+  padding-left: 0;        /* Eliminar padding izquierdo */
+  list-style: none;       /* Eliminar estilos de lista */
+  border-radius: 0.25rem; /* Bordes redondeados */
+}
+
+/* Enlaces de paginación */
+.page-link {
+  position: relative;     /* Posición relativa */
+  display: block;         /* Mostrar como bloque */
+  padding: 0.5rem 0.75rem; /* Padding interno */
+  margin-left: -1px;     /* Margen izquierdo negativo para unir bordes */
+  line-height: 1.25;     /* Altura de línea */
+  color: var(--primary-color); /* Color del texto */
+  background-color: #fff; /* Color de fondo */
+  border: 1px solid #dee2e6; /* Borde */
+}
+
+/* Estilos para el ítem activo en la paginación */
+.page-item.active .page-link {
+  z-index: 1;             /* Asegurar que esté por encima */
+  color: #fff;            /* Color del texto */
+  background-color: var(--primary-color); /* Color de fondo */
+  border-color: var(--primary-color); /* Color del borde */
+}
+
+/* ---------- MODALES ---------- */
+.modal {
+  position: fixed;        /* Posición fija */
+  top: 0;                /* Alineado en la parte superior */
+  left: 0;               /* Alineado en la parte izquierda */
+  z-index: 1050;         /* Z-index alto para superposición */
+  display: none;         /* Oculto por defecto */
+  width: 100%;           /* Ancho completo */
+  height: 100%;          /* Altura completa */
+  overflow: hidden;      /* Ocultar desbordamiento */
+  outline: 0;            /* Eliminar contorno */
+  background-color: rgba(0,0,0,0.5); /* Fondo semitransparente */
+}
+
+/* Contenedor del modal */
+.modal-dialog {
+  position: relative;    /* Posición relativa */
+  width: auto;           /* Ancho automático */
+  margin: 0.5rem;        /* Margen */
+  pointer-events: none;  /* Deshabilitar eventos de puntero */
+  max-width: 500px;      /* Ancho máximo */
+  margin: 1.75rem auto;  /* Margen centrado */
+}
+
+/* Contenido del modal */
+.modal-content {
+  position: relative;    /* Posición relativa */
+  display: flex;         /* Flexbox para alinear elementos */
+  flex-direction: column; /* Dirección de columna */
+  width: 100%;           /* Ancho completo */
+  pointer-events: auto;  /* Habilitar eventos de puntero */
+  background-color: #fff; /* Color de fondo */
+  background-clip: padding-box; /* Recorte del fondo */
+  border: 1px solid rgba(0,0,0,0.2); /* Borde */
+  border-radius: 0.3rem; /* Bordes redondeados */
+  outline: 0;            /* Eliminar contorno */
+}
+
+/* Encabezado del modal */
+.modal-header {
+  display: flex;         /* Flexbox para alinear elementos */
+  align-items: flex-start; /* Alineación superior */
+  justify-content: space-between; /* Espacio entre elementos */
+  padding: 1rem;         /* Padding interno */
+  border-bottom: 1px solid #dee2e6; /* Borde inferior */
+  border-top-left-radius: 0.3rem; /* Bordes redondeados superiores */
+  border-top-right-radius: 0.3rem;
+}
+
+/* Título del modal */
+.modal-title {
+  margin-bottom: 0;      /* Eliminar margen inferior */
+  line-height: 1.5;      /* Altura de línea */
+}
+
+/* Cuerpo del modal */
+.modal-body {
+  position: relative;    /* Posición relativa */
+  flex: 1 1 auto;        /* Flexibilidad para ocupar espacio */
+  padding: 1rem;         /* Padding interno */
+}
+
+/* Pie del modal */
+.modal-footer {
+  display: flex;         /* Flexbox para alinear elementos */
+  align-items: center;   /* Centrado vertical */
+  justify-content: flex-end; /* Alineación a la derecha */
+  padding: 1rem;         /* Padding interno */
+  border-top: 1px solid #dee2e6; /* Borde superior */
+}
+
+/* ---------- ESTILOS ESPECÍFICOS PARA PÁGINAS ---------- */
+
+/* Estilos para la página de inicio de sesión */
+.login-container {
+  max-width: 400px;      /* Ancho máximo */
+  margin: 100px auto;    /* Margen centrado */
+  padding: 30px;         /* Padding interno */
+  background-color: #fff; /* Color de fondo */
+  border-radius: 8px;    /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Logo en la página de inicio de sesión */
+.login-logo {
+  text-align: center;    /* Texto centrado */
+  margin-bottom: 30px;   /* Margen inferior */
+  font-size: 28px;       /* Tamaño de fuente */
+  font-weight: bold;     /* Texto en negrita */
+  color: var(--primary-color); /* Color del texto */
+}
+
+/* Estilos para la página de ATM */
+.atm-container {
+  max-width: 500px;      /* Ancho máximo */
+  margin: 50px auto;     /* Margen centrado */
+  padding: 20px;         /* Padding interno */
+  background-color: #fff; /* Color de fondo */
+  border-radius: 8px;    /* Bordes redondeados */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Pantalla del ATM */
+.atm-screen {
+  background-color: #e0f7fa; /* Color de fondo */
+  border: 1px solid #b2ebf2; /* Borde */
+  border-radius: 4px;    /* Bordes redondeados */
+  padding: 20px;         /* Padding interno */
+  margin-bottom: 20px;   /* Margen inferior */
+}
+
+/* Teclado del ATM */
+.atm-keypad {
+  display: grid;         /* CSS Grid para el layout */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+  gap: 10px;             /* Espacio entre teclas */
+  max-width: 300px;      /* Ancho máximo */
+  margin: 0 auto;        /* Margen centrado */
+}
+
+/* Teclas del ATM */
+.atm-key {
+  background-color: #f2f2f2; /* Color de fondo */
+  border: 1px solid #ddd;    /* Borde */
+  border-radius: 4px;        /* Bordes redondeados */
+  padding: 15px;             /* Padding interno */
+  text-align: center;        /* Texto centrado */
+  font-size: 18px;           /* Tamaño de fuente */
+  cursor: pointer;           /* Cursor tipo puntero */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Efecto hover en las teclas del ATM */
+.atm-key:hover {
+  background-color: #ddd;    /* Color de fondo al pasar el mouse */
+}
+
+/* Animación de carga en el ATM */
+.atm-loading {
+  display: none;             /* Oculto por defecto */
+  text-align: center;        /* Texto centrado */
+  padding: 20px;             /* Padding interno */
+}
+
+/* Animación de círculo giratorio */
+.atm-loading::after {
+  content: '';               /* Contenido vacío */
+  display: inline-block;     /* Mostrar como bloque en línea */
+  width: 30px;               /* Ancho */
+  height: 30px;              /* Alto */
+  border: 3px solid rgba(0,0,0,0.3); /* Borde */
+  border-radius: 50%;        /* Bordes redondeados */
+  border-top-color: var(--primary-color); /* Color del borde superior */
+  animation: spin 1s ease-in-out infinite; /* Animación de giro */
+}
+
+/* Animación de giro */
+@keyframes spin {
+  to { transform: rotate(360deg); } /* Rotación completa */
+}
+  
+
+
+
+
+
+
+/* ---------- ESTILOS PARA IMPRESIÓN ---------- */
+@media print {
+  /* Ocultar elementos no necesarios en la impresión */
+  .header, .sidebar, .no-print {
+      display: none !important; /* Ocultar con prioridad */
+  }
+  
+  /* Ajustar el contenido para impresión */
+  .content {
+      width: 100%; /* Ancho completo */
+      margin: 0;   /* Sin margen */
+      padding: 0;  /* Sin padding */
+  }
+  
+  /* Estilos para tarjetas al imprimir */
+  .card {
+      box-shadow: none; /* Eliminar sombra */
+      border: 1px solid #ddd; /* Borde simple */
+  }
+  
+  /* Ajustar el tamaño de fuente del cuerpo */
+  body {
+      font-size: 12pt; /* Tamaño de fuente para impresión */
+  }
+  
+  /* Ajustar el tamaño de fuente de los títulos */
+  h1 {
+      font-size: 18pt; /* Tamaño de fuente para h1 */
+  }
+  
+  h2 {
+      font-size: 16pt; /* Tamaño de fuente para h2 */
+  }
+  
+  h3 {
+      font-size: 14pt; /* Tamaño de fuente para h3 */
+  }
+  
+  /* Estilos para tablas al imprimir */
+  .table {
+      border-collapse: collapse; /* Colapsar bordes de la tabla */
+      width: 100%;              /* Ancho completo */
+  }
+  
+  /* Bordes para celdas de la tabla */
+  .table th, .table td {
+      border: 1px solid #ddd; /* Borde simple */
+  }
+}
+
+/* ---------- ESTILOS RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  /* Cambiar la dirección del contenedor principal a columna */
+  .main-container {
+      flex-direction: column; /* Dirección de columna */
+  }
+  
+  /* Ajustar el menú lateral para dispositivos móviles */
+  .sidebar {
+      width: 100%; /* Ancho completo */
+      border-right: none; /* Eliminar borde derecho */
+      border-bottom: 1px solid var(--border-color); /* Borde inferior */
+  }
+  
+  /* Cambiar el layout del dashboard a una sola columna */
+  .dashboard {
+      grid-template-columns: 1fr; /* Una sola columna */
+  }
+  
+  /* Ajustar el encabezado para dispositivos móviles */
+  .header {
+      flex-direction: column; /* Dirección de columna */
+      text-align: center;     /* Texto centrado */
+  }
+  
+  /* Ajustar la información del usuario para dispositivos móviles */
+  .user-info {
+      margin-top: 10px; /* Margen superior */
+  }
+}
+
+
+
+
+
+
+
+/* ---------- ESTILOS PARA LA PÁGINA DE BIENVENIDA ---------- */
+.welcome-container {
+  padding: 20px 0;       /* Padding vertical */
+  max-width: 1200px;     /* Ancho máximo */
+  margin: 0 auto;        /* Centrado horizontal */
+}
+
+/* Banner de bienvenida */
+.welcome-banner {
+  display: flex;          /* Flexbox para alinear elementos */
+  background-color: var(--primary-color); /* Color de fondo */
+  color: white;          /* Color del texto */
+  border-radius: 10px;   /* Bordes redondeados */
+  margin-bottom: 30px;   /* Margen inferior */
+  overflow: hidden;      /* Ocultar desbordamiento */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Contenido del banner de bienvenida */
+.welcome-banner-content {
+  flex: 1;               /* Ocupar el espacio restante */
+  padding: 30px;         /* Padding interno */
+}
+
+.welcome-banner-content h2 {
+  font-size: 24px;       /* Tamaño de fuente */
+  margin-bottom: 15px;   /* Margen inferior */
+}
+
+.welcome-banner-content p {
+  font-size: 16px;       /* Tamaño de fuente */
+  line-height: 1.6;      /* Altura de línea */
+}
+
+/* Imagen del banner de bienvenida */
+.welcome-banner-image {
+  width: 300px;          /* Ancho fijo */
+  height: 200px;         /* Alto fijo */
+  overflow: hidden;      /* Ocultar desbordamiento */
+}
+
+.welcome-banner-image img {
+  width: 100%;           /* Ancho completo */
+  height: 100%;          /* Alto completo */
+  object-fit: cover;     /* Ajustar la imagen */
+}
+
+/* Contenedor de estadísticas */
+.stats-container {
+  display: grid;         /* CSS Grid para el layout */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas responsivas */
+  gap: 20px;             /* Espacio entre elementos */
+  margin-bottom: 30px;   /* Margen inferior */
+}
+
+/* Ítems de estadísticas */
+.stats-item {
+  background-color: white; /* Color de fondo */
+  border-radius: 10px;   /* Bordes redondeados */
+  padding: 20px;         /* Padding interno */
+  text-align: center;    /* Texto centrado */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s ease; /* Transición suave */
+}
+
+.stats-item:hover {
+  transform: translateY(-5px); /* Efecto hover */
+}
+
+/* Icono de estadísticas */
+.stats-icon {
+  font-size: 30px;       /* Tamaño de fuente */
+  color: var(--primary-color); /* Color del icono */
+  margin-bottom: 10px;   /* Margen inferior */
+}
+
+/* Valor de estadísticas */
+.stats-value {
+  font-size: 24px;       /* Tamaño de fuente */
+  font-weight: bold;     /* Texto en negrita */
+  margin-bottom: 5px;    /* Margen inferior */
+}
+
+/* Etiqueta de estadísticas */
+.stats-label {
+  color: #666;           /* Color del texto */
+  font-size: 14px;       /* Tamaño de fuente */
+}
+
+/* Secciones de bienvenida */
+.welcome-sections {
+  display: grid;         /* CSS Grid para el layout */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+  gap: 30px;             /* Espacio entre elementos */
+  margin-bottom: 30px;   /* Margen inferior */
+}
+
+/* Sección individual de bienvenida */
+.welcome-section {
+  background-color: white; /* Color de fondo */
+  border-radius: 10px;   /* Bordes redondeados */
+  padding: 20px;         /* Padding interno */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.welcome-section h3 {
+  color: var(--primary-color); /* Color del texto */
+  margin-bottom: 20px;   /* Margen inferior */
+  font-size: 18px;       /* Tamaño de fuente */
+  border-bottom: 2px solid var(--primary-color); /* Borde inferior */
+  padding-bottom: 10px;  /* Padding inferior */
+}
+
+/* Enlaces rápidos */
+.welcome-quick-links {
+  display: grid;         /* CSS Grid para el layout */
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); /* Columnas responsivas */
+  gap: 15px;             /* Espacio entre elementos */
+}
+
+/* Ítems de enlaces rápidos */
+.quick-link-item {
+  display: flex;         /* Flexbox para alinear elementos */
+  flex-direction: column; /* Dirección de columna */
+  align-items: center;   /* Centrado vertical */
+  text-align: center;    /* Texto centrado */
+  padding: 15px;         /* Padding interno */
+  background-color: #f8f9fa; /* Color de fondo */
+  border-radius: 8px;    /* Bordes redondeados */
+  transition: all 0.3s ease; /* Transición suave */
+  text-decoration: none; /* Eliminar subrayado */
+  color: var(--primary-color); /* Color del texto */
+}
+
+.quick-link-item:hover {
+  background-color: var(--primary-color); /* Color de fondo al pasar el mouse */
+  color: white;          /* Color del texto */
+  transform: translateY(-5px); /* Efecto hover */
+}
+
+.quick-link-item i {
+  font-size: 24px;       /* Tamaño de fuente */
+  margin-bottom: 10px;   /* Margen inferior */
+}
+
+/* Tabla de transacciones recientes */
+.recent-transactions table {
+  width: 100%;           /* Ancho completo */
+  border-collapse: collapse; /* Colapsar bordes */
+  margin-bottom: 15px;   /* Margen inferior */
+}
+
+.recent-transactions th,
+.recent-transactions td {
+  padding: 10px;         /* Padding interno */
+  text-align: left;      /* Alineación del texto */
+  border-bottom: 1px solid #eee; /* Borde inferior */
+}
+
+.recent-transactions th {
+  font-weight: bold;     /* Texto en negrita */
+  color: var(--primary-color); /* Color del texto */
+}
+
+/* Pie de página de bienvenida */
+.welcome-footer {
+  text-align: center;    /* Texto centrado */
+  margin-top: 40px;      /* Margen superior */
+  color: #666;           /* Color del texto */
+  font-size: 14px;       /* Tamaño de fuente */
+  border-top: 1px solid #eee; /* Borde superior */
+  padding-top: 20px;     /* Padding superior */
+}
+
+/* ---------- ESTILOS PARA LA PÁGINA DE ACERCA DE ---------- */
+.about-container {
+  max-width: 900px;      /* Ancho máximo */
+  margin: 0 auto;        /* Centrado horizontal */
+  padding: 20px;         /* Padding interno */
+}
+
+/* Contenido de la página de acerca de */
+.about-content {
+  display: flex;         /* Flexbox para alinear elementos */
+  gap: 30px;             /* Espacio entre elementos */
+  margin-top: 30px;      /* Margen superior */
+}
+
+/* Logo en la página de acerca de */
+.about-logo {
+  flex: 0 0 200px;       /* Ancho fijo */
+}
+
+.about-logo img {
+  max-width: 100%;       /* Ancho máximo */
+  border-radius: 10px;   /* Bordes redondeados */
+}
+
+/* Información de la página de acerca de */
+.about-info {
+  flex: 1;               /* Ocupar el espacio restante */
+}
+
+.about-info h2 {
+  color: var(--primary-color); /* Color del texto */
+  margin-bottom: 5px;    /* Margen inferior */
+}
+
+.about-info .version {
+  color: #666;           /* Color del texto */
+  margin-bottom: 20px;   /* Margen inferior */
+}
+
+/* Detalles de la página de acerca de */
+.about-details {
+  margin-bottom: 30px;   /* Margen inferior */
+}
+
+/* Lista de detalles */
+.about-list {
+  list-style-type: none; /* Eliminar estilos de lista */
+  padding-left: 0;       /* Eliminar padding izquierdo */
+  margin-bottom: 20px;   /* Margen inferior */
+}
+
+.about-list li {
+  padding: 8px 0;        /* Padding interno */
+  border-bottom: 1px solid #eee; /* Borde inferior */
+}
+
+.about-list li:last-child {
+  border-bottom: none;   /* Eliminar borde inferior del último ítem */
+}
+
+/* Acciones en la página de acerca de */
+.about-actions {
+  margin-top: 30px;      /* Margen superior */
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  /* Cambiar la dirección del banner de bienvenida a columna */
+  .welcome-banner {
+      flex-direction: column; /* Dirección de columna */
+  }
+  
+  /* Ajustar la imagen del banner para dispositivos móviles */
+  .welcome-banner-image {
+      width: 100%;       /* Ancho completo */
+      height: 150px;     /* Alto fijo */
+  }
+  
+  /* Cambiar la dirección del contenido de la página de acerca de a columna */
+  .about-content {
+      flex-direction: column; /* Dirección de columna */
+      align-items: center;   /* Centrado horizontal */
+  }
+  
+  /* Margen inferior para el logo en dispositivos móviles */
+  .about-logo {
+      margin-bottom: 20px; /* Margen inferior */
+  }
+}

@@ -1,0 +1,165 @@
+/* ---------- Variables globales ---------- */
+:root {
+    --titulo-size: 36px; /* Tamaño base del título */
+    --texto-size: 18px; /* Tamaño base del texto */
+    --color-primario: #2E7D32; /* Verde primario */
+    --color-secundario: #388E3C; /* Verde secundario */
+    --color-fondo: #E8F5E9; /* Fondo verde claro */
+    --color-texto: #1B5E20; /* Color de texto oscuro */
+    --color-texto-claro: #FFFFFF; /* Color de texto claro */
+}
+
+/* ---------- Estilos principales del body ---------- */
+body {
+    font-family: 'Poppins', sans-serif; /* Fuente personalizada */
+    margin: 0; /* Elimina márgenes por defecto */
+    background-color: var(--color-fondo); /* Fondo verde claro */
+    color: var(--color-texto); /* Color base del texto */
+    text-align: center; /* Centrado del contenido */
+}
+
+.main-content {
+    padding: 20px; /* Espaciado interno para el contenido principal */
+}
+
+/* ---------- Sección de bienvenida ---------- */
+.welcome-section {
+    padding: 40px 20px; /* Espaciado interno uniforme */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    text-align: center; /* Centra el contenido de la sección */
+}
+
+.welcome-title {
+    font-family: 'Montserrat', sans-serif; /* Fuente personalizada para el título */
+    font-size: var(--titulo-size); /* Tamaño definido por variable */
+    font-weight: bold; /* Negrita para destacar */
+    color: var(--color-texto); /* Color inicial del título */
+    text-transform: uppercase; /* Convierte texto a mayúsculas */
+    margin-bottom: 20px; /* Espaciado inferior */
+    cursor: pointer; /* Cursor tipo mano al pasar el ratón */
+    position: relative; /* Para usar pseudo-elementos */
+    transition: color 0.3s ease, transform 0.3s ease; /* Suaviza las animaciones */
+}
+
+/* Línea decorativa bajo el título */
+.welcome-title::before {
+    content: ""; /* Pseudo-elemento para la línea */
+    position: absolute; /* Posición relativa al título */
+    left: 50%; /* Centrado horizontal */
+    bottom: -12px; /* Posición debajo del título */
+    transform: translateX(-50%); /* Corrección de centrado */
+    width: 650px; /* Ancho inicial */
+    height: 4px; /* Grosor de la línea */
+    background-color: var(--color-primario); /* Color inicial */
+    border-radius: 2px; /* Bordes redondeados */
+    transition: width 0.3s ease, background-color 0.3s ease; /* Animaciones suaves */
+}
+
+/* Efecto hover sobre el título */
+.welcome-title:hover {
+    transform: translateY(-5px); /* Eleva el título ligeramente */
+    color: var(--color-secundario); /* Cambia color del texto */
+}
+
+.welcome-title:hover::before {
+    width: 750px; /* Expande la línea */
+    background-color: var(--color-secundario); /* Cambia el color de la línea */
+}
+
+.welcome-text {
+    font-size: var(--texto-size); /* Tamaño ajustable por variable */
+    color: var(--color-texto); /* Color del texto */
+    margin-top: 20px; /* Espaciado superior */
+}
+
+/* ---------- Contenedor para servicios ---------- */
+.service-container {
+    display: flex; /* Flexbox para organización */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-bottom: 40px; /* Espaciado inferior */
+    
+}
+
+/* ---------- Sección de iconos ---------- */
+.icons-section {
+    display: flex; /* Usa Flexbox para organizar los iconos */
+    justify-content: center; /* Centra los iconos horizontalmente */
+    flex-wrap: wrap; /* Permite que los iconos se ajusten a la línea siguiente si es necesario */
+    gap: 20px; /* Espacio entre los iconos */
+}
+
+/* ---------- Estilos para las tarjetas de valores (movies) ---------- */
+.movie-grid {
+    display: flex; /* Usa Flexbox para organizar las tarjetas */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    gap: 20px; /* Espacio entre las tarjetas */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten si hay demasiado espacio */
+}
+
+/* Estilo para cada tarjeta individual */
+.movie-card {
+    position: relative; /* Establece una posición relativa para poder colocar elementos sobre ella */
+    width: 210px; /* Aumenta el ancho de la tarjeta */
+    height: 350px; /* Aumenta la altura de la tarjeta */
+    background-color: var(--color-primario); /* Fondo verde primario */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Evita que los elementos fuera del borde sean visibles */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Añade una sombra sutil */
+    transition: transform 0.3s ease-in-out; /* Efecto de transición suave al interactuar con la tarjeta */
+}
+
+/* Efecto de escala al pasar el mouse sobre la tarjeta */
+.movie-card:hover {
+    transform: scale(1.05); /* Aumenta el tamaño de la tarjeta un 5% */
+}
+
+/* ---------- Estilos para la imagen dentro de la tarjeta ---------- */
+.movie-card img {
+    width: 100%; /* La imagen ocupará todo el ancho de la tarjeta */
+    height: 70%; /* Ajusta la altura de la imagen */
+    display: block; /* Hace que la imagen sea un bloque */
+    object-fit: cover; /* Cubre el área de la tarjeta sin distorsionar la imagen */
+}
+
+/* ---------- Estilos para la superposición de texto dentro de la tarjeta (card-overlay) ---------- */
+.card-overlay {
+    position: absolute; /* Posición absoluta para que se superponga sobre la tarjeta */
+    bottom: 0; /* Ubica el texto al fondo de la tarjeta */
+    left: 0; /* Alinea el texto a la izquierda */
+    width: 100%; /* Hace que la superposición ocupe todo el ancho de la tarjeta */
+    background-color: rgba(46, 125, 50, 0.9); /* Fondo verde con transparencia */
+    padding: 5px; /* Espaciado alrededor del texto */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    opacity: 1; /* Hace que la superposición sea visible todo el tiempo */
+    text-align: center; /* Centra el contenido dentro de la superposición */
+}
+
+/* ---------- Estilo para el título dentro de la superposición ---------- */
+.card-overlay .card-title {
+    font-size: 20px; /* Tamaño de la letra para el título */
+    color: var(--color-texto-claro); /* Color claro para el título */
+    margin-bottom: 10px; /* Espaciado debajo del título */
+    text-align: center; /* Centra el título */
+}
+
+/* ---------- Estilo para la descripción dentro de la superposición ---------- */
+.card-overlay .card-description {
+    font-size: 16px; /* Tamaño más pequeño para la descripción */
+    color: var(--color-texto-claro); /* Color claro para la descripción */
+}
+
+/* ---------- Ajustes responsivos ---------- */
+@media (max-width: 768px) {
+    :root {
+        --titulo-size: 2em; /* Tamaño reducido del título */
+        --texto-size: 1em; /* Tamaño reducido del texto */
+    }
+
+    .movie-card {
+        width: 100%; /* Las tarjetas ocupan todo el ancho en pantallas pequeñas */
+        height: auto; /* Altura automática para adaptarse al contenido */
+    }
+}

@@ -1,0 +1,32 @@
+/* ---------- ESTILOS PARA EL FOOTER DE ANCHO COMPLETO ---------- */
+
+/* Contenedor principal del footer */
+.footer-full-width {
+    position: fixed; /* Posición fija en la parte inferior */
+    bottom: 0; /* Alineado al fondo de la pantalla */
+    left: 0; /* Alineado a la izquierda */
+    width: 100%; /* Ancho completo */
+    background-color: #033d11; /* Color de fondo verde oscuro */
+    color: white; /* Color del texto blanco */
+    padding: 10px 0; /* Espaciado interno vertical */
+    text-align: center; /* Centrado del texto */
+    z-index: 1000; /* Asegura que esté sobre todos los elementos */
+}
+
+/* Estilos para los párrafos dentro del footer */
+.footer-full-width p {
+    margin: 5px 0; /* Margen superior e inferior */
+    font-size: 0.875rem; /* Tamaño de fuente */
+}
+
+/* Estilos para los enlaces dentro del footer */
+.footer-full-width a {
+    color: white; /* Color del texto blanco */
+    text-decoration: none; /* Sin subrayado */
+    margin: 0 10px; /* Margen horizontal entre enlaces */
+}
+
+/* Efecto hover para los enlaces */
+.footer-full-width a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}

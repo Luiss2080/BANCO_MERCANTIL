@@ -1,0 +1,197 @@
+/* ---------- VARIABLES DE COLOR ---------- */
+:root {
+    --primary-color: #056f1f; /* Verde principal */
+    --secondary-color: #004481; /* Azul complementario */
+    --light-color: #ffffff; /* Blanco */
+    --border-color: #e0e0e0; /* Gris claro para bordes */
+    --hover-color: #033d11; /* Verde oscuro para hover */
+    --danger-color: #dc3545; /* Rojo para errores */
+    --success-color: #28a745; /* Verde para éxito */
+    --warning-color: #ffc107; /* Amarillo para advertencias */
+    --info-color: #17a2b8; /* Azul claro para información */
+}
+
+/* ---------- ESTILOS GENERALES ---------- */
+body {
+    background-color: #e2e2e3ef; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ---------- CONTENEDOR PRINCIPAL ---------- */
+.login-container {
+    background-color: var(--light-color);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid var(--border-color);
+}
+
+/* ---------- LOGO ---------- */
+.logo {
+    position: relative;
+    width: 100%; /* Asegura que el contenedor ocupe todo el ancho */
+    text-align: center; /* Centra la imagen dentro del contenedor */
+}
+
+.logo img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho */
+    height: auto; /* Mantiene la proporción */
+}
+
+/* ---------- ANIMACIÓN DEL RECTÁNGULO ---------- */
+.animated-bar {
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(90deg, var(--primary-color), var(--hover-color));
+    background-size: 300% 100%;
+    animation: slide 3s infinite;
+    border-radius: 8px;
+}
+
+@keyframes slide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ---------- TÍTULO ---------- */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+/* ---------- FORMULARIO ---------- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ---------- ESTILOS PARA CAMPOS DE ENTRADA ---------- */
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-with-icon .icon {
+    position: absolute;
+    left: 10px;
+    font-size: 24px; /* Tamaño más grande para los íconos */
+    color: #056f1f; /* Color verde para los íconos */
+    z-index: 1; /* Asegura que el ícono esté sobre el campo */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de levantamiento */
+}
+
+.input-with-icon input {
+    padding: 10px 10px 10px 50px; /* Más espacio para el ícono más grande */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Color de fondo del text box */
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.input-with-icon input:hover,
+.input-with-icon input:focus {
+    border: 2px solid #056f1f; /* Borde verde al hacer hover o focus */
+    background-color: #e0f7e0; /* Cambio de color de fondo al hacer hover o focus */
+    transform: scale(1.05); /* Efecto de escala */
+    outline: none; /* Elimina el borde por defecto al hacer focus */
+}
+
+/* Efecto de levantamiento para el ícono cuando el input está en hover o focus */
+.input-with-icon:hover .icon,
+.input-with-icon input:focus + .icon {
+    transform: translateY(-5px); /* Levanta el ícono */
+}
+
+/* ---------- ESTILOS PARA EL SELECTOR DE IDIOMA ---------- */
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.language-selector .icon {
+    font-size: 24px; /* Tamaño más grande para el ícono */
+    color: #056f1f; /* Color verde para el ícono */
+    transition: transform 0.3s ease; /* Transición suave para el efecto de levantamiento */
+}
+
+.language-selector select {
+    padding: 10px 30px 10px 10px; /* Más grande y con espacio para el ícono */
+    border-radius: 8px;
+    border: 2px solid #056f1f; /* Borde verde */
+    background-color: #fff; /* Fondo blanco */
+    color: #056f1f; /* Color verde */
+    font-size: 14px;
+    cursor: pointer;
+    appearance: none; /* Elimina el estilo por defecto del select */
+    transition: all 0.3s ease;
+}
+
+.language-selector select:hover {
+    border-color: #033d11; /* Borde verde oscuro al hacer hover */
+    transform: translateY(-2px); /* Efecto de levantamiento */
+}
+
+/* Efecto de levantamiento para el ícono cuando el select está en hover */
+.language-selector:hover .icon {
+    transform: translateY(-5px); /* Levanta el ícono */
+}
+
+/* ---------- BOTÓN ---------- */
+button {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: scale(1.05);
+}
+
+/* ---------- ENLACES ---------- */
+.recover-password {
+    color: var(--secondary-color);
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 20px;
+    display: block; /* Para que ocupe su propia línea */
+}
+
+.recover-password:hover {
+    text-decoration: underline;
+}
+
+/* ---------- VERSIÓN ---------- */
+.version {
+    font-size: 12px;
+    color: #888888;
+    margin-top: 20px;
+}
